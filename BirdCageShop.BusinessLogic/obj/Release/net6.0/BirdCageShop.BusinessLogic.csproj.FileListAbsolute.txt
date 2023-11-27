@@ -1,0 +1,15 @@
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\bin\Release\net6.0\BirdCageShop.BusinessLogic.deps.json
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\bin\Release\net6.0\BirdCageShop.BusinessLogic.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\bin\Release\net6.0\BirdCageShop.BusinessLogic.pdb
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\bin\Release\net6.0\BirdCageShop.DataAccess.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\bin\Release\net6.0\BirdCageShop.DataAccess.pdb
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.csproj.AssemblyReference.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.AssemblyInfoInputs.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.AssemblyInfo.cs
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.csproj.CopyComplete
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\refint\BirdCageShop.BusinessLogic.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\BirdCageShop.BusinessLogic.pdb
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.BusinessLogic\obj\Release\net6.0\ref\BirdCageShop.BusinessLogic.dll

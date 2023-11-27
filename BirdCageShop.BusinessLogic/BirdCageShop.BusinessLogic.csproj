@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="BusinessModel\RequestModels\NewFolder1\**" />
+    <Compile Remove="BusinessModel\RequestModels\NewFolder2\**" />
+    <EmbeddedResource Remove="BusinessModel\RequestModels\NewFolder1\**" />
+    <EmbeddedResource Remove="BusinessModel\RequestModels\NewFolder2\**" />
+    <None Remove="BusinessModel\RequestModels\NewFolder1\**" />
+    <None Remove="BusinessModel\RequestModels\NewFolder2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="BusinessModel\RequestModels\Notification.cs" />
+    <Compile Remove="Services\LoginSercice.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
+    <PackageReference Include="NTQ.Sdk.Core" Version="1.1.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BirdCageShop.DataAccess\BirdCageShop.DataAccess.csproj" />
+  </ItemGroup>
+
+</Project>

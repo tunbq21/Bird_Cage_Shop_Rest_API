@@ -1,0 +1,14 @@
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\bin\Release\net6.0\BirdCageShop.DataAccess.deps.json
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\bin\Release\net6.0\BirdCageShop.DataAccess.runtimeconfig.json
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\bin\Release\net6.0\BirdCageShop.DataAccess.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\bin\Release\net6.0\BirdCageShop.DataAccess.pdb
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.csproj.AssemblyReference.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.AssemblyInfoInputs.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.AssemblyInfo.cs
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\refint\BirdCageShop.DataAccess.dll
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.pdb
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\BirdCageShop.DataAccess.genruntimeconfig.cache
+C:\Users\yoga\Desktop\FU\Kỳ 5\SWP391\BirdCageShopAPI\BirdCageShop.DataAccess\obj\Release\net6.0\ref\BirdCageShop.DataAccess.dll

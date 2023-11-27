@@ -1,0 +1,387 @@
+﻿<#
+    //TO USE THIS FILE INSTALL "NTQ.Sdk.Core" NUGET PACKAGE
+#>
+<#@ template language="C#" hostspecific="true"#>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension="cs" #>
+<#
+            var files = GetCsvFileNames();
+            var enumerable = files.ToList();
+            
+            //GENERATE REPOSITORY
+            
+#>
+
+
+<#
+            //GENERATE SERVICE
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+using BirdCageShop.BusinessLogic.RequestModels.<#= file #>;
+using BirdCageShop.BusinessLogic.ViewModels.<#= file #>;
+using BirdCageShop.BusinessLogic.Services;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+
+namespace BirdCageShop.Presentation.Controllers 
+{
+
+    [ApiController]
+    [ApiVersion("1")]
+    [Route("/api/v1/<#= file.ToLower() #>s")]
+    public class <#= file #>Controller : ControllerBase {
+
+        private I<#= file #>Service _<#= file.ToLower() #>Service;
+
+         public <#= file #>Controller(I<#= file #>Service <#= file.ToLower() #>Service)
+        {
+            _<#= file.ToLower() #>Service = <#= file.ToLower() #>Service;
+        }
+
+        [MapToApiVersion("1")]
+        [HttpPost]
+        public ActionResult<<#= file#>ViewModel> Create<#= file #>(Create<#= file #>RequestModel <#= file.ToLower() #>Create)
+        {
+            var <#= file.ToLower() #>Created = _<#= file.ToLower() #>Service.Create<#= file #>(<#= file.ToLower() #>Create);
+
+            if (<#= file.ToLower() #>Created == null)
+            {
+                return NotFound("");
+            }
+            return <#= file.ToLower() #>Created;
+        }
+
+        [MapToApiVersion("1")]
+        [HttpGet]
+        public ActionResult<List<<#= file#>ViewModel>> GetAll()
+        {
+            var <#= file.ToLower() #>List = _<#= file.ToLower() #>Service.GetAll();
+
+            if (<#= file.ToLower() #>List == null)
+            {
+                return NotFound("");
+            }
+            return <#= file.ToLower() #>List;
+        }
+
+        [MapToApiVersion("1")]
+        [HttpGet("idTmp")]
+        public ActionResult<<#= file#>ViewModel> GetById(int idTmp)
+        {
+            var <#= file.ToLower() #>Detail = _<#= file.ToLower() #>Service.GetById(idTmp);
+
+            if (<#= file.ToLower() #>Detail == null)
+            {
+                return NotFound("");
+            }
+            return <#= file.ToLower() #>Detail;
+        }
+
+        [MapToApiVersion("1")]
+        [HttpDelete]
+        public ActionResult<bool> Delete<#= file #>(int idTmp)
+        {
+            var check = _<#= file.ToLower() #>Service.Delete<#= file #>(idTmp);
+
+            if (check == false)
+            {
+                return NotFound("");
+            }
+            return check;
+        }
+
+        [MapToApiVersion("1")]
+        [HttpPut]
+        public ActionResult<<#= file#>ViewModel> Update<#= file #>(Update<#= file #>RequestModel <#= file.ToLower() #>Create)
+        {
+            var <#= file.ToLower() #>Updated = _<#= file.ToLower() #>Service.Update<#= file #>(<#= file.ToLower() #>Create);
+
+            if (<#= file.ToLower() #>Updated == null)
+            {
+                return NotFound("");
+            }
+            return <#= file.ToLower() #>Updated;
+        }
+    }
+
+}
+<#
+                // End of file.
+                SaveOutput(file + "Controller.cs", "./Controllers");
+            }
+#>
+
+<#
+            //GENERATE SERVICE
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+using BirdCageShop.BusinessLogic.ViewModels.<#= file #>;
+using BirdCageShop.BusinessLogic.RequestModels.<#= file #>;
+using BirdCageShop.DataAccess.Repositories;
+using System.Collections.Generic;
+using System;
+
+namespace BirdCageShop.BusinessLogic.Services 
+{
+
+    public interface I<#= file #>Service {
+        public <#= file #>ViewModel Create<#= file #>(Create<#= file #>RequestModel <#= file.ToLower() #>Create);
+        public <#= file #>ViewModel Update<#= file #>(Update<#= file #>RequestModel <#= file.ToLower() #>Update);
+        public bool Delete<#= file #>(int idTmp);
+        public List<<#= file #>ViewModel> GetAll();
+        public <#= file #>ViewModel GetById(int idTmp);
+    }
+
+    public class <#= file #>Service : I<#= file #>Service {
+
+      private readonly I<#= file #>Repository _<#= file.ToLower() #>Repository;
+
+        public <#= file #>Service(I<#= file #>Repository <#= file.ToLower() #>Repository)
+        {
+            _<#= file.ToLower() #>Repository = <#= file.ToLower() #>Repository;
+        }
+
+        public <#= file #>ViewModel Create<#= file #>(Create<#= file #>RequestModel <#= file.ToLower() #>Create)
+        {
+            throw new NotImplementedException();
+        }
+
+        public <#= file #>ViewModel Update<#= file #>(Update<#= file #>RequestModel <#= file.ToLower() #>Update) 
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete<#= file #>(int idTmp)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<<#= file #>ViewModel> GetAll() 
+        {
+            throw new NotImplementedException();
+        }
+
+        public <#= file #>ViewModel GetById(int idTmp) 
+        {
+            throw new NotImplementedException();
+        }
+
+    }
+
+}
+<#
+                // End of file.
+                SaveOutput(file + "Service.cs", "./Services");
+            }
+#>
+
+
+
+<#
+            //GENERATE SERVICE
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+using Microsoft.EntityFrameworkCore;
+using NTQ.Sdk.Core.BaseConnect;
+using BirdCageShop.DataAccess.Models;
+
+namespace BirdCageShop.DataAccess.Repositories 
+{
+
+    public partial interface I<#= file #>Repository :IBaseRepository<<#= file #>>
+    {
+    }
+    public partial class <#= file #>Repository :BaseRepository<<#= file #>>, I<#= file #>Repository
+    {
+         public <#= file #>Repository(DbContext dbContext) : base(dbContext)
+         {
+         }
+    }
+}
+
+
+<#
+                // End of file.
+                SaveOutput(file + "Repository.cs", "./Repositories");
+            }
+#>
+
+
+
+
+
+<#
+            //GENERATE AUTOMAPPER MODULE
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+using AutoMapper;
+using BirdCageShop.BusinessLogic.RequestModels.<#= file #>;
+using BirdCageShop.BusinessLogic.ViewModels.<#= file #>;
+using BirdCageShop.DataAccess.Models;
+
+
+namespace BirdCageShop.BusinessLogic.AutoMapperModule 
+{
+
+   public static class <#= file #>Module
+    {
+        public static void Config<#= file #>Module(this IMapperConfigurationExpression mc)
+        {
+            mc.CreateMap<<#= file #>, <#= file #>ViewModel>().ReverseMap();
+            mc.CreateMap<<#= file #>, Create<#= file #>RequestModel>().ReverseMap();
+            mc.CreateMap<<#= file #>, Update<#= file #>RequestModel>().ReverseMap();
+        }
+    }
+
+}
+<#
+                // End of file.
+                SaveOutput(file + "Module.cs", "./AutoMapperModule");
+            }
+#>
+/////////////////////////////////////////////////////////////////
+//
+//              AUTO-GENERATED | DON'T CHANGE
+//
+/////////////////////////////////////////////////////////////////
+
+using BirdCageShop.DataAccess.Models;
+using Microsoft.Extensions.DependencyInjection;
+using BirdCageShop.BusinessLogic.Services;
+using BirdCageShop.BusinessLogic.Generations.Repositories;
+using Microsoft.EntityFrameworkCore;
+
+namespace BirdCageShop.BusinessLogic.Generations.DependencyInjection
+{
+    public static class DependencyInjectionResolverGen
+    {
+        public static void InitializerDependencyInjection(this IServiceCollection services)
+        {
+            services.AddScoped<DbContext, <#=
+                enumerable.FirstOrDefault(f => f.EndsWith("Context")) #>>();
+        <#
+            foreach (string item in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+            services.AddScoped<I<#= item #>Service, <#= item #>Service>();
+            services.AddScoped<I<#= item #>Repository, <#= item #>Repository>();
+        <#
+            }
+#>
+}
+    }
+}
+<#
+            SaveOutput("DependencyInjectionResolverGen.cs", "DependencyInjection");
+#>
+
+<#
+            //GENERATE VIEW MODEL
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+namespace Ecommerce.BusinessLogic.ViewModels 
+{
+
+    public class <#= file #>ViewModel {
+    
+    }
+
+}
+<#
+                // End of file.
+                SaveOutput(file + "ViewModel.cs", "./ViewModels");
+            }
+#>
+<#
+            //GENERATE CREATE REQUEST MODEL
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+namespace Ecommerce.BusinessLogic.RequestModels.<#= file #> 
+{
+
+   public class Create<#= file #>RequestModel {
+     
+   }
+
+}
+<#
+                // End of file.
+                SaveOutput("Create" + file + "RequestModel.cs", "./RequestModels/" + file);
+            }
+#>
+<#
+            //GENERATE UPDATE REQUEST MODEL
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+namespace Ecommerce.BusinessLogic.RequestModels.<#= file #> 
+{
+
+   public class Update<#= file #>RequestModel {
+     
+   }
+
+}
+<#
+                // End of file.
+                SaveOutput("Update" + file + "RequestModel.cs", "./RequestModels/" + file);
+            }
+#>
+
+
+<#
+            //GENERATE RESPONSE MODEL
+            foreach (var file in enumerable.Where(w => !w.EndsWith("Context")))
+            {
+#>
+
+namespace Ecommerce.BusinessLogic.ViewModels.<#= file #> 
+{
+
+   public class Create<#= file #>ViewModel {
+     
+   }
+
+}
+<#
+                // End of file.
+                SaveOutput(file + "ViewModel.cs", "./ViewModels/" + file);
+            }
+#>
+
+
+<#+
+    private void SaveOutput(string outputFileName, string folder)
+    {
+        string templateDirectory = Path.GetDirectoryName(Host.TemplateFile);
+        if (!Directory.Exists(Path.Combine(templateDirectory ?? string.Empty, folder)))
+        {
+            Directory.CreateDirectory(Path.Combine(templateDirectory ?? string.Empty, folder));
+        }
+        string outputFilePath = Path.Combine(templateDirectory ?? string.Empty, folder, outputFileName);
+        File.WriteAllText(outputFilePath, this.GenerationEnvironment.ToString());
+        GenerationEnvironment.Clear();
+    }
+
+    private IEnumerable<string> GetCsvFileNames()
+    {
+        var currentPath = Host.ResolvePath(string.Empty);
+        var path = Path.Combine(currentPath, @"..\BirdCageShop.DataAccess\Models");
+        return Directory.GetFiles(path, "*.cs").Select(s => new FileInfo(s).Name.Replace(".cs", ""));
+    }
+#>
